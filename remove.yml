@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    resource_group: table1jyansiblerg
+    location: japanwest
+  tasks:
+    - name: Delete resource
+      azure_rm_resourcegroup:
+        name: "{{ resource_group }}"
+        state: absent
+        force: true
